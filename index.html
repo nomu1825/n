@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STRUCTURE｜Sales Design Guide</title>
+<meta name="description" content="営業の全工程を9テーマで設計する。初回接触から受注後フォローまで、商談の設計図。9本セット ¥1,980">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0a0a0a;--bg2:#111;--bg3:#161616;--tx:#e8e8e8;--tx2:#888;--tx3:#555;--ac:#c4a35a;--ac2:rgba(196,163,90,.12);--bd:#222;--mono:'DM Mono',monospace;--sans:'Noto Sans JP',sans-serif}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--tx);font-weight:300;line-height:1.85;font-size:15px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+::selection{background:var(--ac);color:var(--bg)}
+.ctn{max-width:800px;margin:0 auto;padding:0 24px}
+section{padding:100px 0;border-bottom:1px solid var(--bd)}
+.lbl{font-family:var(--mono);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--ac);margin-bottom:32px;display:block}
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;padding:60px 0}
+.hero::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:1px;height:120px;background:linear-gradient(to bottom,transparent,var(--ac));opacity:.4}
+.hero-lbl{font-family:var(--mono);font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--ac);margin-bottom:40px;opacity:0;animation:fu .8s ease .3s forwards}
+.hero h1{font-size:clamp(26px,5vw,46px);font-weight:700;line-height:1.4;letter-spacing:-.02em;margin-bottom:32px;opacity:0;animation:fu .8s ease .5s forwards}
+.hero h1 em{font-style:normal;color:var(--ac)}
+.hero-sub{font-size:15px;color:var(--tx2);max-width:500px;margin:0 auto 48px;opacity:0;animation:fu .8s ease .7s forwards}
+.hero-meta{font-family:var(--mono);font-size:12px;color:var(--tx3);letter-spacing:2px;opacity:0;animation:fu .8s ease .9s forwards}
+.prose{font-size:16px;color:var(--tx2);max-width:640px}
+.prose p{margin-bottom:24px}
+.prose strong{color:var(--tx);font-weight:500}
+.ins{border-left:2px solid var(--ac);padding:32px 0 32px 32px;margin:48px 0}
+.ins p{font-size:18px;font-weight:400;line-height:1.9;color:var(--tx)}
+.cgrid{display:grid;gap:2px;margin-top:48px}
+.citem{background:var(--bg3);padding:32px;display:grid;grid-template-columns:48px 1fr;gap:24px;align-items:start;transition:background .3s}
+.citem:hover{background:#1a1a1a}
+.cnum{font-family:var(--mono);font-size:13px;color:var(--ac);padding-top:2px}
+.ctitle{font-size:15px;font-weight:500;margin-bottom:8px}
+.cdesc{font-size:13px;color:var(--tx2);line-height:1.8}
+.fwi{padding:20px 0;border-bottom:1px solid var(--bd);font-size:15px;color:var(--tx2);display:flex;gap:16px;align-items:baseline}
+.fwi::before{content:'\2014';color:var(--tx3);flex-shrink:0}
+.sample-box{background:var(--bg3);border:1px solid var(--bd);padding:40px;margin-top:48px;text-align:center}
+.sample-box h3{font-size:16px;font-weight:500;margin-bottom:12px}
+.sample-box p{font-size:13px;color:var(--tx2);margin-bottom:24px}
+.dl-btn{display:inline-block;padding:14px 48px;border:1px solid var(--ac);color:var(--ac);font-family:var(--sans);font-size:13px;font-weight:500;letter-spacing:1px;text-decoration:none;transition:all .3s}
+.dl-btn:hover{background:var(--ac2);transform:translateY(-1px)}
+.price-sec{text-align:center;padding:120px 0}
+.price-amt{font-family:var(--mono);font-size:clamp(48px,8vw,72px);font-weight:500;color:var(--tx);letter-spacing:-2px;margin:32px 0 8px}
+.price-dtl{font-size:13px;color:var(--tx3);margin-bottom:48px}
+.cta{display:inline-block;padding:18px 64px;background:var(--ac);color:var(--bg);font-family:var(--sans);font-size:14px;font-weight:500;letter-spacing:1px;text-decoration:none;transition:all .3s;border:none;cursor:pointer}
+.cta:hover{background:#d4b36a;transform:translateY(-2px);box-shadow:0 8px 32px rgba(196,163,90,.2)}
+.cta-note{font-size:12px;color:var(--tx3);margin-top:24px}
+.closing{border-bottom:none}
+footer{padding:48px 0;text-align:center}
+.fbrand{font-family:var(--mono);font-size:11px;letter-spacing:3px;color:var(--tx3)}
+.fcopy{font-size:11px;color:var(--tx3);margin-top:8px;opacity:.5}
+@keyframes fu{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.fi{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.fi.v{opacity:1;transform:translateY(0)}
+@media(max-width:600px){section{padding:72px 0}.citem{grid-template-columns:1fr;gap:8px}.price-sec{padding:80px 0}.cta{padding:16px 48px;font-size:13px}.ins{padding-left:20px}.sample-box{padding:28px 20px}}
+</style>
+</head>
+<body>
+
+<section class="hero">
+<div class="ctn">
+  <div class="hero-lbl">Sales Design Guide</div>
+  <h1>売れてる営業が<br>何をやっているか、<br>全部<em>分解</em>して書いてみた。</h1>
+  <p class="hero-sub">営業の全工程を9テーマに分解。<br>初回接触から受注後のフォローまで、商談の「設計図」。</p>
+  <div class="hero-meta">STRUCTURE｜9本セット ¥1,980</div>
+</div>
+</section>
+
+<section>
+<div class="ctn">
+  <span class="lbl fi">Problem</span>
+  <div class="prose fi">
+    <p>商談に行く。一通り話す。「検討します」と言われる。帰る。</p>
+    <p>たまに受注できる月がある。でも、なぜ受注できたかがわからない。だから翌月また元に戻る。いい月と悪い月の差が激しくて、月末になるとずっと焦っている。</p>
+    <p>先輩に相談しても「場数だよ」と言われる。確かに正しいけど、<strong>具体的に何をどう変えればいいかがわからない。</strong></p>
+  </div>
+  <div class="ins fi">
+    <p>売れている人の商談を何度も横で見て、ようやくわかりました。あの人たちは「売るのがうまい」のではなく、<strong>商談の全部が事前に設計されていた。</strong></p>
+  </div>
+  <div class="prose fi">
+    <p>最初の5分で何を観察するか。質問を出す順番。提案書のどこに「今やる理由」を入れるか。断られた後に何日後にどう連絡するか。全部、決まっている。</p>
+    <p>才能でもセンスでもなく、<strong>設計があるかないかの差</strong>でした。</p>
+  </div>
+</div>
+</section>
+
+<section>
+<div class="ctn">
+  <span class="lbl fi">Contents</span>
+  <p class="prose fi" style="margin-bottom:0">営業の流れを頭から順番に、9つのテーマに分解しました。</p>
+  <div class="cgrid">
+    <div class="citem fi"><span class="cnum">01</span><div><div class="ctitle">電話・メール・初回接触の設計</div><div class="cdesc">最初の5分は売り込みの時間ではなく、聞く姿勢を作る時間。警戒を下げる入口設計と、アジェンダ提示で主導権を取る4ステップ。</div></div></div>
+    <div class="citem fi"><span class="cnum">02</span><div><div class="ctitle">アイスブレイクと情報収集</div><div class="cdesc">天気の話はアイスブレイクではなく、ただの雑談。本来は相手のタイプを見極め、情報を拾う「観察の時間」として設計する。</div></div></div>
+    <div class="citem fi"><span class="cnum">03</span><div><div class="ctitle">質問設計と深掘りの技術</div><div class="cdesc">商談が止まる原因のほとんどは質問が浅いこと。課題の輪郭をはっきりさせ、相手自身に「放置できない」と気づかせる質問の設計。</div></div></div>
+    <div class="citem fi"><span class="cnum">04</span><div><div class="ctitle">商談設計アジェンダ</div><div class="cdesc">「今日はこの3点で」と冒頭に言うだけで主導権が移る。60分商談の理想構造と、ゴールから逆算する進行設計。</div></div></div>
+    <div class="citem fi"><span class="cnum">05</span><div><div class="ctitle">提案書設計プログラム</div><div class="cdesc">提案書は「営業の台本」ではなく「担当者が社内で使う武器」。決裁者の部屋まで一人で歩いていく提案書の10スライド構造。</div></div></div>
+    <div class="citem fi"><span class="cnum">06</span><div><div class="ctitle">数字の管理と逆算思考</div><div class="cdesc">「困っている」を「月◯円の損失」に変換した瞬間、課題の重さが変わる。KPI逆算と定量化テンプレート。</div></div></div>
+    <div class="citem fi"><span class="cnum">07</span><div><div class="ctitle">社内政治を制する営業</div><div class="cdesc">上司への4点セット報告、先輩の巻き込み方、他部署への布石。一人で戦う営業から、組織の力で受注する営業へ。</div></div></div>
+    <div class="citem fi"><span class="cnum">08</span><div><div class="ctitle">断られた後の立て直し方</div><div class="cdesc">失注には3つの型がある。型を分けるだけで「自分がダメだった」から離れられる。再連絡のタイミング設計と再提案の4つの切り口。</div></div></div>
+    <div class="citem fi"><span class="cnum">09</span><div><div class="ctitle">受注後のフォローと関係構築</div><div class="cdesc">受注はゴールではなくスタート。追加提案を「押し売り」ではなく「伴走」にする受注直後からのタイムライン設計。</div></div></div>
+  </div>
+</div>
+</section>
+
+<section>
+<div class="ctn">
+  <span class="lbl fi">Why a Set</span>
+  <div class="prose fi">
+    <p>正直なところ、一箇所だけ直してもあまり変わりません。</p>
+    <p>質問力が上がっても提案書が弱ければ受注まで届かない。提案書がよくても初回で警戒されていたら中身を見てもらえない。受注できてもフォローがなければ次に繋がらない。</p>
+    <p><strong>営業は全部繋がっています。</strong>だから全工程をまとめてセットにしました。</p>
+  </div>
+</div>
+</section>
+
+<section>
+<div class="ctn">
+  <span class="lbl fi">For You</span>
+  <div class="prose fi" style="margin-bottom:16px"><p style="margin-bottom:0">こんな状態にいる人に届いてほしいと思っています。</p></div>
+  <div>
+    <div class="fwi fi">頑張っているのに、数字が安定しない。</div>
+    <div class="fwi fi">商談の後、「なんとなくよかった」としか振り返れない。</div>
+    <div class="fwi fi">先輩の商談に同席しても、何を盗めばいいかわからない。</div>
+    <div class="fwi fi">提案は通るのに、最後の受注まで届かない。</div>
+    <div class="fwi fi">自己流に限界を感じ始めている。</div>
+  </div>
+</div>
+</section>
+
+<section>
+<div class="ctn">
+  <span class="lbl fi">Free Sample</span>
+  <div class="prose fi">
+    <p>買う前に中身を確認したい方のために、9本の中から「商談設計アジェンダ」の冒頭を無料で公開しています。</p>
+    <p>商談の質は話し方ではなく設計で決まる。その考え方と、60分商談の理想構造の導入部分をお読みいただけます。</p>
+  </div>
+  <div class="sample-box fi">
+    <h3>商談設計アジェンダ｜無料サンプル</h3>
+    <p>表紙・はじめに・目次・第1章「アジェンダ設計の本質」冒頭｜全5ページ</p>
+    <a href="sample.pdf" download="STRUCTURE_商談設計アジェンダ_サンプル.pdf" class="dl-btn">無料PDFをダウンロード</a>
+  </div>
+</div>
+</section>
+
+<section class="price-sec">
+<div class="ctn">
+  <span class="lbl fi">Price</span>
+  <div class="price-amt fi">¥1,980</div>
+  <div class="price-dtl fi">9本セット｜1本あたり約220円</div>
+  <a href="https://structurepl.base.shop/items/137214900" target="_blank" rel="noopener" class="cta fi">購入する</a>
+  <div class="cta-note fi">BASEショップへ移動します</div>
+</div>
+</section>
+
+<section class="closing">
+<div class="ctn">
+  <div class="prose fi">
+    <p>営業で伸び悩んでいる人の大半は、「やり方を知らない」だけです。才能がないわけでも、向いていないわけでもない。</p>
+    <p><strong>設計図がまだ手元にないだけです。</strong></p>
+    <p>このパックが、あなたの営業を変えるきっかけになれば嬉しいです。</p>
+  </div>
+</div>
+</section>
+
+<footer>
+  <div class="fbrand">STRUCTURE｜Sales Design Guide</div>
+  <div class="fcopy">&copy; 2025 All Rights Reserved.</div>
+</footer>
+
+<script>
+const o=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('v');o.unobserve(e.target)}})},{threshold:.15});
+document.querySelectorAll('.fi').forEach(el=>o.observe(el));
+</script>
+
+</body>
+</html>
